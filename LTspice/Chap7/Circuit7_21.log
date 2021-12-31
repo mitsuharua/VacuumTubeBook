@@ -1,0 +1,21 @@
+Circuit: * \\vmware-host\Shared Folders\arimura\Dropbox\_j_Ohmsha_VacuumTubeBook\LTspice\Chap7\Circuit7_21.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sun Dec 19 22:32:27 2021
+Total elapsed time: 0.485 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3122
+traniter = 3114
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 15
+fillins = 8
+solver = Normal
+Matrix Compiler1: 1.10 KB object code size  0.5/0.3/[0.1]
+Matrix Compiler2: 1.36 KB object code size  0.3/0.3/[0.2]
+

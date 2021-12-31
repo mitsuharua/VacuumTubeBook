@@ -1,0 +1,22 @@
+Circuit: * \\vmware-host\Shared Folders\arimura\Dropbox\_j_Ohmsha_VacuumTubeBook\LTspice\Chap8\Circuit8_03.asc
+
+WARNING: Less than two connections to node U1:EG.  This node is used by B:U1:EG.
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Dec 21 20:39:23 2021
+Total elapsed time: 0.575 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2169
+traniter = 2161
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 51
+fillins = 37
+solver = Normal
+Matrix Compiler1: 5.04 KB object code size  1.6/3.3/[0.5]
+Matrix Compiler2: 4.55 KB object code size  0.8/1.4/[0.7]
+

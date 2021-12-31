@@ -1,0 +1,30 @@
+.SUBCKT WE409A 1 2 3; P G K
++ PARAMS:
++ kG=140.14072096114666 ; from model fit
++ mu=41.34886806478225 ; from model fit
++ exponent=0.8243569662909564 ; from model fit
++ kp=84.92923445692747 ; from model fit
++ kvb=199.99999991051212 ; from model fit
++ kvb2=1.748117052310306 ; from model fit
++ ect=-0.4097196578319391 ; from model fit
++ CGA=0.01p CGK=3.9p CAK=3.0p ; from datasheet
++ RGI=2000
+
+* Plate Current
+E1  6 0 VALUE={SQRT(kvb+V(1,3)*V(1,3)+kvb2*V(1,3))}
+E2  7 0 VALUE={V(1,3)/kp*LOG(1+EXP(kp*(1/mu+(V(2,3)+ect)/V(6))))}
+RE1 7 0 1G
+G1  1 3 VALUE={PWR(URAMP(V(7)),exponent)/kG}
+RCP 1 3 1G
+D3  5 3 DX    ; for Grid Current
+R2  2 5 {RGI} ; for Grid Current
+* CAPS
+CGK 2 3 {CGK} ; Cathode-Grid
+CGA 2 1 {CGA} ; Grid-Anode(Plate)
+CAK 1 3 {CAK} ; Anode(Plate)-Cathode
+* REGS
+RF1 1 0 1G
+RF2 2 0 1G
+RF3 3 0 1G
+.MODEL DX D(IS=1N RS=1 CJO=10PF TT=1N) ; diode for grid current
+.ENDS
