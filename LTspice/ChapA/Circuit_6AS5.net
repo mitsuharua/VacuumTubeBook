@@ -1,9 +1,0 @@
-* \\vmware-host\Shared Folders\arimura\Dropbox\_j_Ohmsha_VacuumTubeBook\LTspice\Appendix\Circuit_6AS5.asc
-V1 N001 0 0
-V2 N002 0 {VG}
-XU1 N001 N002 0 6AS5
-.step param VG -5 0 0.5
-.dc V1 0 30 0.1
-.lib MyTubeModel\6AS5.sub
-.backanno
-.end
