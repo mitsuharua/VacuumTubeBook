@@ -12,6 +12,7 @@
 
 * 有村光晴
 * 湘南工科大学
+* blog: https://mitsuharua.blogspot.com/
 * Facebook: https://www.facebook.com/mitsuharu.arimura
 * Twitter: https://twitter.com/mitsu_arimura
 * Instagram: https://www.instagram.com/mitsuharu_a/
