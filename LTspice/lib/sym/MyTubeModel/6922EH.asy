@@ -20,8 +20,8 @@ WINDOW 0 8 -64 Left 2
 WINDOW 3 -24 64 Left 2
 SYMATTR Value E88CC
 SYMATTR Prefix X
-SYMATTR E88CC (6DJ8) JJ
-SYMATTR ModelFile MyTubeModel\E88CC.sub
+SYMATTR 6922 (6DJ8) Electro Haromonix
+SYMATTR ModelFile MyTubeModel\6922EH.sub
 PIN 0 -48 NONE 0
 PINATTR PinName Plate
 PINATTR SpiceOrder 1

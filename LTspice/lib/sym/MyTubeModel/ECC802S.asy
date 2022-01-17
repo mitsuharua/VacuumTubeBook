@@ -20,8 +20,8 @@ WINDOW 0 8 -64 Left 2
 WINDOW 3 -24 64 Left 2
 SYMATTR Value 12AU7
 SYMATTR Prefix X
-SYMATTR Description Audio Triode
-SYMATTR ModelFile MyTubeModel\12AU7.sub
+SYMATTR 12AU7 (ECC802S) JJ
+SYMATTR ModelFile MyTubeModel\ECC802S.sub
 PIN 0 -48 NONE 0
 PINATTR PinName Plate
 PINATTR SpiceOrder 1
