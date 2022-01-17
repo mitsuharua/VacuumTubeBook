@@ -20,7 +20,7 @@ WINDOW 0 8 -64 Left 2
 WINDOW 3 -24 64 Left 2
 SYMATTR Value 6J1P-EV
 SYMATTR Prefix X
-SYMATTR Description Audio Power Pentode Triode Connection
+SYMATTR Description 6J1P-EV, Russia, Pentode Triode Connection
 SYMATTR ModelFile MyTubeModel\6J1P-EV.sub
 PIN 0 -48 NONE 0
 PINATTR PinName Plate

@@ -18,9 +18,9 @@ LINE Normal -28 16 28 16
 CIRCLE Normal -48 -48 48 48
 WINDOW 0 8 -64 Left 2
 WINDOW 3 -24 64 Left 2
-SYMATTR Value E88CC
+SYMATTR Value 6922EH
 SYMATTR Prefix X
-SYMATTR 6922 (6DJ8) Electro Haromonix
+SYMATTR Description 6922, 6DJ8 Electro Haromonix
 SYMATTR ModelFile MyTubeModel\6922EH.sub
 PIN 0 -48 NONE 0
 PINATTR PinName Plate

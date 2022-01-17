@@ -20,7 +20,7 @@ WINDOW 0 8 -64 Left 2
 WINDOW 3 -24 64 Left 2
 SYMATTR Value WE401A
 SYMATTR Prefix X
-SYMATTR Description Audio Pentode Triode Connection
+SYMATTR Description WE401A, Pentode Triode Connection
 SYMATTR ModelFile MyTubeModel\WE401A.sub
 PIN 0 -48 NONE 0
 PINATTR PinName Plate
