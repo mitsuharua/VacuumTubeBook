@@ -1,4 +1,4 @@
-.SUBCKT 12AU7 1 2 3; P G K
+.SUBCKT 12AU7EH 1 2 3; P G K
 + PARAMS:
 + kG=421.4019150640017 ; from model fit
 + mu=23.19799380494047 ; from model fit

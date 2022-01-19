@@ -1,0 +1,30 @@
+.SUBCKT 5670 1 2 3; P G K
++ PARAMS:
++ kG=209.28646385476085 ; from model fit
++ mu=42.883928822033106 ; from model fit
++ exponent=1.0534150015054564 ; from model fit
++ kp=85.63414816684164 ; from model fit
++ kvb=199.99999996705967 ; from model fit
++ kvb2=-3.6122735288045504 ; from model fit
++ ect=-0.2014054384835493 ; from model fit
++ CGA=1.1p CGK=2.2p CAK=1.0p ; from datasheet
++ RGI=2000
+
+* Plate Current
+E1  6 0 VALUE={SQRT(kvb+V(1,3)*V(1,3)+kvb2*V(1,3))}
+E2  7 0 VALUE={V(1,3)/kp*LOG(1+EXP(kp*(1/mu+(V(2,3)+ect)/V(6))))}
+RE1 7 0 1G
+G1  1 3 VALUE={PWR(URAMP(V(7)),exponent)/kG}
+RCP 1 3 1G
+D3  5 3 DX    ; for Grid Current
+R2  2 5 {RGI} ; for Grid Current
+* CAPS
+CGK 2 3 {CGK} ; Cathode-Grid
+CGA 2 1 {CGA} ; Grid-Anode(Plate)
+CAK 1 3 {CAK} ; Anode(Plate)-Cathode
+* REGS
+RF1 1 0 1G
+RF2 2 0 1G
+RF3 3 0 1G
+.MODEL DX D(IS=1N RS=1 CJO=10PF TT=1N) ; diode for grid current
+.ENDS
