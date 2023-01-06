@@ -14,7 +14,7 @@
 
 * LTspice/lib: LTspiceのモデルファイル
 
-コンピューターにインストールされているLTspiceのlib/subとlib/symの中に，MyTubeModelというフォルダをコピーすると，上記のシミュレーション用回路ファイルから読み込むことができます．
+コンピューターにインストールされているLTspiceのライブラリフォルダlib/subとlib/symの中に，フォルダlib/subの中のMyTubeModelと，フォルダlib/symの中のMyTubeModelをそれぞれコピーすると，上記のシミュレーション用回路ファイルから読み込むことができます．
 
 * Program/: 真空管で実測したEp，IpからLTspiceのモデルファイルを作成するプログラム
 
