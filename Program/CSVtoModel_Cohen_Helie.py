@@ -123,7 +123,7 @@ def OutputOriginalDataGraphEpIp2D(xarrayf, yarrayf, datamatrixf,
     #print("xtics: {}".format(xticklist))
     plt.xticks(xticklist)
     # 格子線を描画
-    plt.grid(b=None, which='major', axis='both')
+    plt.grid(visible=None, which='major', axis='both')
     # 実測データを折れ線でプロット
     line_styles = ["-", "--", ":", "-."]
     for eg in range(xarrayf.size):
@@ -165,7 +165,7 @@ def OutputOriginalDataGraphEpIp2D1mA(xarrayf, yarrayf, datamatrixf,
     #print("xtics: {}".format(xticklist))
     plt.xticks(xticklist)
     # 格子線を描画
-    plt.grid(b=None, which='major', axis='both')
+    plt.grid(visible=None, which='major', axis='both')
     # 実測データを折れ線でプロット
     line_styles = ["-", "--", ":", "-."]
     for eg in range(xarrayf.size):
@@ -237,7 +237,7 @@ def DisplayFittedGraph(xarrayf, yarrayf, datamatrixf, fitted_data,
     #print("xtics: {}".format(xticklist))
     plt.xticks(xticklist)
     # 格子線を描画
-    plt.grid(b=None, which='major', axis='both')
+    plt.grid(visible=None, which='major', axis='both')
     # 実測データは点のみプロット
     for eg in range(xarrayf.size):
         plt.plot(yarrayf,
