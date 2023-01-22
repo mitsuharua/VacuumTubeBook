@@ -15,8 +15,10 @@ python3 CSVtoModel_Cohen_Helie.py 6J1_Eg2=Ep.csv 6J1_params_Cohen.csv
 
 # プログラムの実行に必要なライブラリ
 
-標準ライブラリ以外にlmfitが必要です．
-pip3 install lmfit
+標準ライブラリ以外にnumpy, matplotlib, lmfitが必要です．
+
+pip3 install numpy matplotlib lmfit
+
 でインストールしてください．
 
 # 入力ファイル
