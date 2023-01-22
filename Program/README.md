@@ -13,12 +13,10 @@
 
 python3 CSVtoModel_Cohen_Helie.py 6J1_Eg2=Ep.csv 6J1_params_Cohen.csv
 
-# プログラムの実行に必要なライブラリ
+* プログラムの実行に必要なライブラリ
 
 標準ライブラリ以外にnumpy, matplotlib, lmfitが必要です．
-
 pip3 install numpy matplotlib lmfit
-
 でインストールしてください．
 
 # 入力ファイル
@@ -41,3 +39,9 @@ pip3 install numpy matplotlib lmfit
 * 6J1_Eg2=ep_Original.pdf: 計測データのグラフ(最大値は全ての値が入る値)
 * 6J1_Eg2=ep_Original1mA.pdf: 計測データのグラフ(最大値は1mA)
 * 6J1_Eg2=ep_Original3D.pdf: 計測データのEp-Eg-Ip特性グラフを，3次元で表現したものです．各EgとEpに対するIpの値をプロットするので，EgとEpの値を底面とするIpのグラフは3次元で表現されます．
+
+# 出力ファイルをLTspiceで使用するには
+
+* CGA、CGK、CAKの値が記入されていないので、あらかじめ記入する必要があります。データシートにこれらの値が書かれている場合には、pF単位で記入します。CGAが0.03pFの場合にはCGA=0.03pのように???を書き換えてください。データシートにはμμFと書かれている場合がありますが、μμF=pFです。また、in、out、transの容量が書かれている場合は、out=CAK、in=CGK、trans=CGAと読み換えてください。
+
+* ファイル6J1_Eg2=ep_Cohen.subを、LTspiceのlib/subに6J1.subという名前でコピーしてください。lib/Misc/triode.asyを6J1.symというファイルでコピーし、これを本に書かれているように書き換えると、部品として使用できるようになります。
