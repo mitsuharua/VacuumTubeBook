@@ -69,7 +69,7 @@ def FittingData(xlist, ylist, data, paramsList):
     #print('z:\n{}'.format(z_array))
 
     #print("parameter:\n{}".format(paramsList))
-    model = Model(Ip)
+    model = Model(Ip, nan_policy='omit')
     for p in paramsList:
         model.set_param_hint(p[0],
                              value=float(p[1]),
@@ -112,6 +112,50 @@ def OutputOriginalDataGraphEpIp2D(xarrayf, yarrayf, datamatrixf,
     plt.xlabel('Ep(V)')
     plt.ylabel('Ip(mA)')
     plt.xlim(xmax=20)
+    plt.title(titleStr)
+    # xlabelは20個に押さえる
+    if (len(yarrayf) > 10):
+        skip = len(yarrayf) // 20
+        xticklist = yarrayf[::skip]
+    else:
+        xticklist = yarrayf
+    #print("xtics: {}".format(xticklist))
+    plt.xticks(xticklist)
+    # 格子線を描画
+    plt.grid(visible=None, which='major', axis='both')
+    # 実測データを折れ線でプロット
+    line_styles = ["-", "--", ":", "-."]
+    for eg in range(xarrayf.size):
+        plt.plot(yarrayf,
+                 measured_data[eg],
+                 marker="+",
+                 color='black',
+                 linestyle=line_styles[eg % len(line_styles)],
+                 linewidth=0.5 * (eg // len(line_styles) + 1),
+                 label="Eg={:.2f}".format(xarrayf[eg]))
+    # yの範囲の設定
+    plt.ylim(0,)
+    # 凡例の表示
+    plt.legend(bbox_to_anchor=(1.05, 1),
+               loc='upper left', borderaxespad=0)
+    # PDFファイルに出力
+    fileName = fileNameStr + '_Original.pdf'
+    plt.savefig(fileName, bbox_inches='tight', format='pdf')
+    # 現在まで描画した画面を削除
+    plt.clf()
+
+# オリジナルデータのグラフの出力EpIp2次元(最大1mA)
+def OutputOriginalDataGraphEpIp2D1mA(xarrayf, yarrayf, datamatrixf,
+                            titleStr, fileNameStr):
+    #ディスプレイに表示せずファイルに出力するだけの場合の設定
+    matplotlib.use('pdf')
+    # 測定データのプロット
+    measured_data = datamatrixf.T
+    plt.rcParams['font.size'] = 10
+    plt.xlabel('Ep(V)')
+    plt.ylabel('Ip(mA)')
+    plt.xlim(xmax=20)
+    #plt.ylim(ymin=0.0)
     #plt.ylim(ymax=1.0)
     plt.title(titleStr)
     # xlabelは20個に押さえる
@@ -134,48 +178,8 @@ def OutputOriginalDataGraphEpIp2D(xarrayf, yarrayf, datamatrixf,
                  linestyle=line_styles[eg % len(line_styles)],
                  linewidth=0.5 * (eg // len(line_styles) + 1),
                  label="Eg={:.2f}".format(xarrayf[eg]))
-    # 凡例の表示
-    plt.legend(bbox_to_anchor=(1.05, 1),
-               loc='upper left', borderaxespad=0)
-    # PDFファイルに出力
-    fileName = fileNameStr + '_Original.pdf'
-    plt.savefig(fileName, bbox_inches='tight', format='pdf')
-    # 現在まで描画した画面を削除
-    plt.clf()
-
-# オリジナルデータのグラフの出力EpIp2次元(最大1mA)
-def OutputOriginalDataGraphEpIp2D1mA(xarrayf, yarrayf, datamatrixf,
-                            titleStr, fileNameStr):
-    #ディスプレイに表示せずファイルに出力するだけの場合の設定
-    matplotlib.use('pdf')
-    # 測定データのプロット
-    measured_data = datamatrixf.T
-    plt.rcParams['font.size'] = 10
-    plt.xlabel('Ep(V)')
-    plt.ylabel('Ip(mA)')
-    plt.xlim(xmax=20)
-    plt.ylim(ymax=1.0)
-    plt.title(titleStr)
-    # xlabelは20個に押さえる
-    if (len(yarrayf) > 10):
-        skip = len(yarrayf) // 20
-        xticklist = yarrayf[::skip]
-    else:
-        xticklist = yarrayf
-    #print("xtics: {}".format(xticklist))
-    plt.xticks(xticklist)
-    # 格子線を描画
-    plt.grid(visible=None, which='major', axis='both')
-    # 実測データを折れ線でプロット
-    line_styles = ["-", "--", ":", "-."]
-    for eg in range(xarrayf.size):
-        plt.plot(yarrayf,
-                 measured_data[eg],
-                 marker="+",
-                 color='black',
-                 linestyle=line_styles[eg % len(line_styles)],
-                 linewidth=0.5 * (eg // len(line_styles) + 1),
-                 label="Eg={:.2f}".format(xarrayf[eg]))
+    # yの範囲の設定
+    plt.ylim(0,1.0)
     # 凡例の表示
     plt.legend(bbox_to_anchor=(1.05, 1),
                loc='upper left', borderaxespad=0)
@@ -226,7 +230,7 @@ def DisplayFittedGraph(xarrayf, yarrayf, datamatrixf, fitted_data,
     plt.xlabel('Ep(V)')
     plt.ylabel('Ip(mA)')
     plt.xlim(xmax=20)
-    plt.ylim(ymax=1.0)
+    #plt.ylim(ymax=1.0)
     plt.title(titleStr)
     # xlabelは20個に押さえる
     if (len(yarrayf) > 10):
@@ -256,6 +260,8 @@ def DisplayFittedGraph(xarrayf, yarrayf, datamatrixf, fitted_data,
                  linestyle=line_styles[eg % len(line_styles)],
                  linewidth=0.5 * (eg // len(line_styles) + 1),
                  label="Eg={:.2f}".format(xarrayf[eg]))
+    # yの範囲の設定
+    plt.ylim(0,1.0)
     # 凡例の表示
     plt.legend(bbox_to_anchor=(1.05, 1),
                loc='upper left', borderaxespad=0)
