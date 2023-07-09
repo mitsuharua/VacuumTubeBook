@@ -1,4 +1,5 @@
-# VacuumTubeBook
+# 真空管アンプ製作 LTspiceでシミュレーション サポートページ
+<img src="https://github.com/mitsuharua/VacuumTubeBook/book_cover.png" title="Vacuum Tube BOOK" width="450" height="635">
 
 # ディレクトリ構成
 
