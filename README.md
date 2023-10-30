@@ -11,9 +11,8 @@
 
 # ファイルのダウンロード方法
 
-右上にある緑色の「Code」というボタンをマウスでクリックすると，メニューが開きます．一番下にある「Download ZIP」をクリックすると，全てのファイルがzipファイルにアーカイブされて手元のパソコンにダウンロードされます．
-<img src="https://github.com/mitsuharua/VacuumTubeBook/blob/main/download1.png" title="Download 1">
-<img src="https://github.com/mitsuharua/VacuumTubeBook/blob/main/download2.png" title="Download 2">
+右上にある緑色の「Code」というボタンをマウスでクリックすると，メニューが開きます．一番下にある「Download ZIP」をクリックすると，全てのファイルがzipファイルにアーカイブされて手元のパソコンにダウンロードされます．<br/>
+<img src="https://github.com/mitsuharua/VacuumTubeBook/blob/main/download.png" title="Download">
 
 # ディレクトリ構成
 
